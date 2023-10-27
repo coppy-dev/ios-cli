@@ -9,14 +9,14 @@ let package = Package(
     products: [
         .executable(
             name: "coppy",
-            targets: ["coppy"]),
+            targets: ["coppyCli"]),
     ],
     targets: [
         .executableTarget(
-            name: "coppy",
+            name: "coppyCli",
             dependencies: []),
         .testTarget(
-            name: "coppyTests",
-            dependencies: ["coppy"]),
+            name: "coppyCliTests",
+            dependencies: ["coppyCli"]),
     ]
 )

@@ -1,5 +1,5 @@
 import XCTest
-@testable import coppy
+@testable import coppyCli
 
 final class CoppyGeneratorTests: XCTestCase {
     
