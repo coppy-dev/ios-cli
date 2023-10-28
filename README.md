@@ -21,3 +21,21 @@ curl -fsSL https://coppy.app/ios/install.sh | bash
 ```
 
 If you don't want to use the script, you can install it manually. Just download and unzip the archive from our release page. And if you want to call it as `coppy` in your terminal, make sure it is saved in the directory that is added to a `PATH` variable in your terminal.
+
+## Usage
+
+To generate swift classes for your app, run:
+
+```bash
+coppy generate "path/to/config/file.plist" "path/to/output.swift" "ClassPrefix"
+```
+
+- **path/to/config/file.plist** — Path to a Property List file with Coppy config. The config file should contain the ContentKey property, which will be used to load the appropriate content.
+
+  If this argument is ommited, the tool will look for the Coppy.plist file in the current working directory.
+
+- **path/to/output.swift** — Path where the generated content should be saved. It should be a swift file, that then should be picked up by your build system.
+
+  If this argument is ommited, the tool will save the generated classes in `coppyContent.swift` file in current working directory.
+
+- **ClassPrefix** — Optional class prefix. By default, this tool will generate main content class with `CoppyContent` name. However, you can alter that name and pass prefix, so the name of the generated class will become `<ClassPrefix>CoppyContent`.
